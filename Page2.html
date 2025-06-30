@@ -1,0 +1,663 @@
+<!doctype html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link href="css/remix-icon.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="css/styles.css">
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="top-nav flex">
+    <img src="images/logo.png" alt="Haleon Logo" class="logoImage" data-themekey="#">
+    <h2>Sustainability Data Portal</h2>
+    <ul class="flex">
+      <li><a href="#"><i class="ri-home-5-line"></i> Home </a>
+      </li>
+      <li><a href="#"> <i class="ri-information-line"></i>
+          About</a></li>
+      <li><a href="#"><i class="ri-mail-line"></i> Contact</a></li>
+
+    </ul>
+
+
+  </div>
+
+
+  <div class="mainInternalPages">
+
+    <div class="commonTitle">
+      <div class="icon">
+        <i class="ri-file-list-3-fill"></i>
+      </div>
+      <h1>CM Detail</h1>
+    </div>
+    <div class="filters CMDetails">
+      <div class="row">
+        <div class="col-sm-12 ">
+          <ul>
+            <li><strong>CM Code: </strong> 9910189893</li>
+            <li> | </li>
+            <li><strong> CM Description: </strong> AMERILAB TECHNOLOGIES INC</li>
+            <li> | </li>
+            <li><strong> Total SKUS: </strong> 10</li>
+            <li> | </li>
+            <li class="status"><strong> Status: </strong> <span class="signed"> Signed</span></li>
+          </ul>
+
+          <!-- <ul class="CMBtns">
+                <li><h4>SKU Details</h4></li>
+                <li>
+                    <a href="" class="btnCommon btnGreen filterButtons" onclick="">
+                        <span>Add</span>
+                        <i class="ri-add-circle-line"></i>
+                    </a>
+
+                    <a href="" class="btnCommon btnBlack filterButtons" onclick="">
+                        <span>Edit</span>
+                        <i class="ri-pencil-line"></i>
+                    </a>
+                    <a href="" class="btnCommon btnDarkGrey filterButtons" onclick="">
+                        <span>Deactivate</span>
+                        <i class="ri-close-line"></i>
+                    </a>
+                </li>
+                
+            
+        </ul> -->
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="filters">
+          <ul>
+            <li>
+              <div class="fBold">Years</div>
+
+              <select id="componentReference" class="form-control">
+                <option value="2023-2024">July 2023 to June 2024</option>
+                <option value="2024-2025">July 2024 to June 2025</option>
+                <option value="2025-2026">July 2025 to June 2026</option>
+              </select>
+            </li>
+            <li>
+              <div class="fBold">SKU Code-Description</div>
+
+              <select class="form-control">
+                <option>Select</option>
+                <option>44057932-AMERILAB TECHNOLOGIES INC</option>
+                <option>60000000204533-EMC IMM+ CRYSTALS BLACKBERRY LEMON 56CT</option>
+              </select>
+            </li>
+            <!-- <li>
+                            <div class="fBold">Signoff Status</div>
+                             
+                            <select class="form-control" >
+                                <option>1</option>Add/View SKU
+                                <option>2</option>
+                                <option>3</option>
+                            </select> 
+                        </li> -->
+            <li>
+              <a href="javascript:void(0)" class="btnCommon btnGreen filterButtons" onclick="">
+                <span>Search</span>
+                <i class="ri-search-line"></i>
+              </a>
+            </li>
+
+            <li>
+              <a href="javascript:void(0)" class="btnCommon btnBlack filterButtons" onclick="">
+                <span>Reset</span>
+                <i class="ri-refresh-line"></i>
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="CMBtns">
+      <button class="btnCommon btnGreen filterButtons add-sku-btn" onclick="openSKU()">
+        <span>Add SKU</span>
+        <i class="ri-add-circle-line"></i>
+      </button>
+    </div>
+    <!-- <button class="add-sku-btn" onclick="openSKU()" style="background-color: #30ea03;">
+      Add SKU <i class="ri-add-circle-line"></i>
+    </button> -->
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+          <p>
+            <a><strong>SKU-44057932</strong> || BENEFIBER UNFLAVORED STICK PACK 28CT </a>
+            <i class="ri-add-circle-line"></i>
+            <span><button class="btnCommon btnGreen filterButtons add-sku-btn" onclick="openSKU()"
+                style=" height: 28px;">
+                <span>Deactivate</span>
+
+              </button>
+            </span>
+          </p>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+
+            <!-- <ul class="listNone">
+                  <li><strong>SKU Code: </strong> SKU001</li>
+                  <li><strong>SKU Name: </strong> Name 1</li>
+                  <li><strong>SKU Code: </strong> SKU001</li>
+                  <li><strong>SKU Description: </strong> Text</li>
+                  <li><strong>Purchased Quantity: </strong> 100</li>
+                  <li><strong>Status: </strong> <span class="signed">Active</li>
+                  </ul> -->
+            <button class="btnCommon btnGreen filterButtons add-sku-btn" onclick="openSKU()">
+              <span>Edit SKU</span>
+              <i class="ri-edit-line"></i>
+            </button>
+            <!-- <button class="add-sku-btn" onclick="openComponentModal()" style="background-color: #30ea03;">
+              Edit SKU <i class="ri-edit-line"></i>
+            </button> -->
+
+            <p><strong>Reference SKU: </strong> 44057932</p>
+            <p><strong>Component Detail: </strong> </p>
+            <p class="addComponentButton" style="">
+              <span>
+                <strong>Material Type: </strong> Packaging <input checked type="radio" name="option" value="Option 1">
+                Raw Material <input type="radio" name="option" value="Option 2">
+              </span>
+              <span>
+                <button class="btnCommon btnGreen filterButtons add-sku-btn" onclick="openComponentModal()">
+                  <span>Add Component</span> <i class="ri-add-circle-line"></i>
+                </button>
+              </span>
+
+
+
+            </p>
+            <div class="table-responsive tableCommon tableGreen">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Actions</th>
+                    <th>Is Active</th>
+                    <th>Material Type</th>
+                    <th>Component Reference</th>
+                    <th>Component Code</th>
+                    <th>Component Description</th>
+                    <th>Component Validity Date From</th>
+                    <th>Component Validity Date To</th>
+                    <th>Material Group (Category)</th>
+                    <th>Component QTY</th>
+                    <th>Component UoM</th>
+                    <th>Component Base UoM</th>
+                    <th>%w/w</th>
+                    <th>Evidence</th>
+                    <th>Component Packaging Type</th>
+                    <th>Componenet Packaging Material</th>
+                    <th>Helper Column</th>
+                    <th>Component Unit Weight</th>
+                    <th>Weight Unit of measure</th>
+                    <th>% Mechanical Post-Consumer Recycled Content(inc.Chemical)</th>
+                    <th>%Mechinical Post-Industial Recycled Content</th>
+                    <th>% Chemical Recycled Content</th>
+                    <th>% Bio- Sourced?</th>
+                    <th>TMaterial structure-multimaterials only(with%wt))</th>
+                    <th>Component Packaging Colour/Opacity</th>
+                    <th>Component Packaging Level</th>
+                    <th>Component Dimension(3D-LxWxH,2D-LxW)</th>
+                    <th>Packaging Specification Evidence</th>
+                    <th>Evidenceof chemical recycled or bio-source</th>
+                    <th>Mandatory Fields Completion</th>
+                    <th>We acceptable evidemce provided?</th>
+                    <th>Is Data verification for entry complete?</th>
+                    <th> Signed Off by</th>
+                    <th>Signed date</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td><i class="ri-edit-line" onclick="openComponentModal()"></i>
+
+                      <i class="bi bi-pencil-square"></i>
+                      <i class="ri-eye-line"></i>
+
+                    </td>
+                    <td><input type="checkbox" name="option2" value="Option 2"></td>
+                    <td>Packaging
+                    </td>
+                    <td>9910189893_44057932_HAL Benefiber OnGo Foil 10 Lan
+                    </td>
+                    <td>2-6912
+                    </td>
+                    <td>HAL Benefiber OnGo Foil 10 Lan
+                    </td>
+                    <td>1/1/2099
+                    </td>
+                    <td></td>
+                    <td>Foil
+                    </td>
+                    <td>1.193538169
+                    </td>
+                    <td>LF
+                    </td>
+                    <td>1
+                    </td>
+                    <td>EA
+                    </td>
+                    <td></td>
+                    <td>N/A
+                    </td>
+                    <td>Foil
+                    </td>
+                    <td>PE/ALU/PAPER/PET
+                    </td>
+                    <td>0.05
+                    </td>
+                    <td>LB
+
+                    </td>
+                    <td>0.00
+                    </td>
+                    <td>0.00
+                    </td>
+                    <td>0.00
+                    </td>
+                    <td>0.00
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+
+                  <tr>
+                    <td><i class="ri-edit-line"></i>
+
+                      <i class="bi bi-pencil-square"></i>
+                      <i class="ri-eye-line"></i>
+
+                    </td>
+                    <td><input type="checkbox" name="option2" value="Option 2"></td>
+                    <td>Plastic</td>
+                    <td>CR-001</td>
+                    <td>C-1001</td>
+                    <td>Bottle Cap</td>
+                    <td>2023</td>
+                    <td>2024</td>
+                    <td>Bg-001</td>
+                    <td>10</td>
+                    <td>PCS</td>
+                    <td>PCS</td>
+                    <td>Primary</td>
+                    <td>Net</td>
+                    <td>g</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                  </tr>
+
+                  <tr>
+                    <td><i class="ri-edit-line"></i>
+
+                      <i class="bi bi-pencil-square"></i>
+                      <i class="ri-eye-line"></i>
+
+                    </td>
+                    <td><input type="checkbox" name="option2" value="Option 2"></td>
+                    <td>Plastic</td>
+                    <td>CR-001</td>
+                    <td>C-1001</td>
+                    <td>Bottle Cap</td>
+                    <td>2023</td>
+                    <td>2024</td>
+                    <td>Bg-001</td>
+                    <td>10</td>
+                    <td>PCS</td>
+                    <td>PCS</td>
+                    <td>Primary</td>
+                    <td>Net</td>
+                    <td>g</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>Text 1</td>
+                    <td>Text 2</td>
+                    <td>Text 3</td>
+                    <td>Text 4</td>
+                    <td>Text 5</td>
+                    <td>Text 6</td>
+                    <td>Text 7</td>
+                    <td>Text 8</td>
+                    <td>Text 9</td>
+                    <td>Text 10</td>
+                    <td>Text 11</td>
+                    <td>Text 12</td>
+                  </tr>
+
+                  <tr>
+                    <td><i class="ri-edit-line"></i>
+
+                      <i class="bi bi-pencil-square"></i>
+                      <i class="ri-eye-line"></i>
+
+                    </td>
+                    <td><input type="checkbox" name="option2" value="Option 2"></td>
+                    <td>Plastic</td>
+                    <td>CR-001</td>
+                    <td>C-1001</td>
+                    <td>Bottle Cap</td>
+                    <td>2023</td>
+                    <td>2024</td>
+                    <td>Bg-001</td>
+                    <td>10</td>
+                    <td>PCS</td>
+                    <td>PCS</td>
+                    <td>Primary</td>
+                    <td>Net</td>
+                    <td>g</td>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>Text 1</td>
+                    <td>Text 2</td>
+                    <td>Text 3</td>
+                    <td>Text 4</td>
+                    <td>Text 5</td>
+                    <td>Text 6</td>
+                    <td>Text 7</td>
+                    <td>Text 8</td>
+                    <td>Text 9</td>
+                    <td>Text 10</td>
+                    <td>Text 11</td>
+                    <td>Text 12</td>
+                  </tr>
+
+
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+
+          <p>
+            <a><strong>SKU-60000000204533</strong> || EMC IMM+ CRYSTALS BLACKBERRY LEMON 56CTT </a>
+            <i class="ri-add-circle-line"></i>
+             <span><button class="btnCommon btnGreen filterButtons add-sku-btn" onclick="openSKU()" style=" height: 28px;">
+        <span>Deactivate</span>
+       
+      </button>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        <p>
+          <a><strong>SKU-003</strong> <i class="ri-add-circle-line"></i></a>
+        </p>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  </div>
+
+
+
+  <!-- Modal Component -->
+  <div class="modal fade" id="componentModal" tabindex="-1" aria-labelledby="componentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close">x</button>
+          <h5 class="modal-title" id="componentModalLabel"> <span><i class="ri-add-circle-line"></i></span>Add Component
+            Details</h5>
+
+        </div>
+        <div class="modal-body">
+
+
+          <!-- Begin Fields -->
+          <div class="row margtop10">
+            <div class="col-sm-6"><label>Material Type</label><input type="text" id="materialType" class="form-control">
+            </div>
+            <div class="col-sm-6"><label>Component Reference</label><input type="text" id="componentReference"
+                class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component Code</label><input type="text" id="componentCode"
+                class="form-control"></div>
+            <div class="col-sm-6"><label>Component
+                Description</label><input type="text" id="validFrom" class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component
+                Valid Date From</label><input type="text" id="validFrom" class="form-control"></div>
+            <div class="col-sm-6"><label>Component Valid Date To</label><input type="text" id="validTo"
+                class="form-control"></div>
+          </div>
+
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component Material Group (Category)</label><input type="text"
+                id="materialGroup" class="form-control"></div>
+            <div class="col-sm-6"><label>Component QTY</label><input type="text" id="componentQty" class="form-control">
+            </div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component UoM</label><input type="text" id="componentUom" class="form-control">
+            </div>
+            <div class="col-sm-6"><label>Component Base UoM</label><input type="text" id="baseUom" class="form-control">
+            </div>
+          </div>
+
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component Packaging Type</label><input type="text" id="packagingType"
+                class="form-control"></div>
+            <div class="col-sm-6"><label>Component Unit Weight Type</label><input type="text" id="weightType"
+                class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component Unit of Measure</label><input type="text" id="unitMeasure"
+                class="form-control"></div>
+            <div class="col-sm-6"><label>% Mechanical Post-Consumer Recycled Content</label><input type="text"
+                id="postConsumer" class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>% Mechanical Post-Industrial Recycled Content</label><input type="text"
+                id="postIndustrial" class="form-control"></div>
+            <div class="col-sm-6"><label>% Chemical Recycled Content</label><input type="text" id="chemicalRecycled"
+                class="form-control"></div>
+          </div>
+
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>% Bio-sourced?</label><input type="text" id="bioSourced" class="form-control">
+            </div>
+            <div class="col-sm-6"><label>Material Structure (Multimaterials with % wt)</label><input type="text"
+                id="materialStructure" class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component Packaging Colour/Opacity</label><input type="text"
+                id="packagingColor" class="form-control"></div>
+            <div class="col-sm-6"><label>Component Packaging Level</label><input type="text" id="packagingLevel"
+                class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Component Dimension (3D-LxWxH, 2D LxW)</label><input type="text"
+                id="dimensions" class="form-control"></div>
+            <div class="col-sm-6"><label>Packaging Specification Evidence</label><input type="text" id="specEvidence"
+                class="form-control"></div>
+          </div>
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6"><label>Evidence of Chemical Recycled or Bio-source</label><input type="text"
+                id="evidence" class="form-control"></div>
+            <div class="col-sm-6"><label>Last Updated Date</label><input type="text" id="lastUpdated"
+                class="form-control"></div>
+          </div>
+
+
+          <div class="row margtop10" style="margin-top:10px;">
+            <div class="col-sm-6">
+              <label>Proof of Evidence File <span class="text-danger">*</span></label>
+              <input type="file" id="evidenceFile" class="form-control">
+              <small class="text-muted" style="color: red !important;">Max file size: 50MB</small>
+            </div>
+          </div>
+
+
+          <!-- End Fields -->
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btnCommon btnGreen filterButtons" data-bs-dismiss="modal"><span>Save </span><i
+              class="ri-save-3-line"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal Add SKU-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="SKUModal" tabindex="-1" aria-labelledby="SKUModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close">x</button>
+          <h5 class="modal-title" id="SKUModalLabel"> <span><i class="ri-add-circle-line"></i></span> Add SKU Details
+          </h5>
+
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+
+            <div class="form-group col-sm-6">
+              <label>Year</label>
+              <select id="componentReference" class="form-control">
+                <option value="2023-2024">July 2023 to June 2024</option>
+                <option value="2024-2025">July 2024 to June 2025</option>
+                <option value="2025-2026">July 2025 to June 2026</option>
+              </select>
+            </div>
+            <!-- Begin Fields -->
+            <div class="form-group col-sm-6"><label>SKU</label><input type="text" id="materialType"
+                class="form-control">
+            </div>
+            <div class="form-group col-sm-6"><label>SKU Desctiption</label><input type="text" id="componentReference"
+                class="form-control"></div>
+
+            <div class="form-group col-sm-6"><label>Purchased QTY</label><input type="text" id="componentReference"
+                class="form-control"></div>
+
+
+            <!-- End Fields -->
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btnCommon btnGreen filterButtons" data-bs-dismiss="modal"><span>Save </span><i
+              class="ri-save-3-line"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer> </footer>
+
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+
+
+
+  <script>
+
+  </script>
+  <script>
+    function openComponentModal() {
+      $('#componentModal').modal('show');
+    }
+    function openSKU() {
+      $('#SKUModal').modal('show');
+    }
+  </script>
+
+</body>
+
+</html>
