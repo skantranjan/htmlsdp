@@ -1,0 +1,25 @@
+S.No,Method,Endpoint,Description,Usage,Auth Required,Content-Type,Parameters
+1,GET,/masterdata,Get all master data (periods material types etc.),Used across all pages for dropdowns and reference data,No,application/json,None
+2,GET,/cm-codes,Get all CM codes with details,Admin & SRM dashboards,Yes,application/json,None
+3,GET,/cm-dashboard/{cmCode},Get CM dashboard data with optional includes,Main CM detail pages,Yes,application/json,"cmCode (path), include (query)"
+4,POST,/pm,Add new 3PM (Component Master),Admin dashboard,Yes,application/json,"period, srm_name, cm_code, cm_description, region_id"
+5,POST,/addpm,Add new 3PM (SRM),SRM dashboard,Yes,application/json,"period, srm_name, cm_code, cm_description, region_id"
+6,GET,/sku-details,Get all SKU details,SKU management pages,Yes,application/json,None
+7,POST,/sku-details,Create new SKU,Add SKU functionality,Yes,application/json,sku_data object
+8,PUT,/sku-details/{skuCode},Update SKU details,Edit SKU functionality,Yes,application/json,"skuCode (path), update data (body)"
+9,PATCH,/toggle-status,Toggle SKU/Component status,Status management,Yes,application/json,"type, id, status"
+10,GET,/skureference/all/{cmCode},Get all SKU references for CM,SKU reference dropdowns,Yes,application/json,cmCode (path)
+11,GET,/skureference/{period}/{cmCode},Get SKU references by period,Period-specific references,Yes,application/json,"period (path), cmCode (path)"
+12,POST,/sku-component-mappings,Search SKU component mappings,Reference SKU search,Yes,application/json,"cm_code, sku_code"
+13,GET,/components/code-data,Get component data by code,Component details,Yes,application/json,component_code (query)
+14,POST,/components,Create new component,Add component functionality,Yes,multipart/form-data,FormData with component details
+15,POST,/components/skureference,Get components by SKU reference,Component mapping,Yes,application/json,Request body with SKU reference
+16,GET,/component-audit-log/{componentId},Get component audit logs,Audit trail,Yes,application/json,componentId (path)
+17,POST,/sku-auditlog,Create SKU audit log,SKU audit trail,Yes,application/json,"sku_code, sku_description, action, etc."
+18,POST,/add-component-audit-log,Create component audit log,Component audit trail,Yes,application/json,"component_id, action, details"
+19,POST,/approval,Send for approval,Approval workflow,Yes,application/json,cm_code
+20,POST,/sku-approval,SKU-specific approval,SKU approval,Yes,application/json,SKU approval data
+21,POST,/export,Export data to Excel/PDF,Data export functionality,Yes,application/json,Export parameters
+22,POST,/pdf-accesstoken,Generate PDF access token,PDF generation,Yes,multipart/form-data,"File, email, period, cm_code"
+23,GET,/signoff-details/{cmCode},Get signoff details,Signoff management,Yes,application/json,cmCode (path)
+24,GET,/components/filterdata-generatepdf,Get filter data for PDF generation,PDF generation,Yes,application/json,cm_code (query)
