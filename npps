@@ -5,3 +5,59 @@ ADOBE-REFRESH-TOKEN=3AAABLblqZhBWpF_JvVhjM2acltikyJGMalPlgQm2RgFY9wR3KeI91jCBNaQ
 ADOBE-REFRESH-URL=https://api.eu1.adobesign.com/oauth/v2/refresh
 ADOBE-TRANSIENT-DOCS-URL=https://api.eu1.adobesign.com/api/rest/v6/transientDocuments
 ADOBE-AGREEMENTS-URL=https://api.eu1.adobesign.com/api/rest/v6/agreements
+
+
+
+
+
+
+
+
+#	Page	Status
+A	Landing page	
+1	Authentication should work on the loading of page.	
+B	3PM Page	
+1	The filters, grid data should according to the login user. If Admin then all data, If CM then the respective 3PM where the login CM is spoc	
+2	Export to excel is showing false data	Done
+3	On document view pop-up, the view of signed pdf is not working. Pls check	
+4	In Add 3PM page there should be only option 2025-2026 onwords. In historic data no 3PM can be added. Provide Reporting period 2025-26 onwards only.	Done
+5	Region, spocs are not showing in the grid and excel	Done
+6	Add 3PM is not working. I was trying to save above details shown in image.	Done
+C	3PM Details	
+1	For 2023-24 and 24-25 Reporting period the data should be freezed, Data cannot be updated. No actions will be performed. SUper Admin can update the entries. No approval is needed.	Done
+2	Inactive SKU data is not binding	Done 
+3	SKU code description dropdown is not binding propoerly for year wise data	
+4	Component code dropdown is not binding propoerly	Done
+5	Color in the accordian is not looking proper	Done
+6	In the Add/Edit SKU please show only year 2025-2026 onwards	Done
+7	Add SKU for bulk/expert is not working properly. It should not show add component and components grid	Done
+8	Add SKU- The 3PM dropdown should show all the active 3PM but it is showing only the same 3PM. For the Reference SKU only active SKUs should appear in the dropdown.	
+9	"On selection of Ref SKU it is showing error fetching data. Error with external sku data save
+"	Done 
+10	For internal SKU, in the accordian we should also show the site name.	Done
+11	On editing of SKU- in the external option ,on selection of 3PM it is not binding reference SKUs	Done 
+12	On saving/updating of SKU it is not showing any confirmation message that data has been saved.	
+13	"Add component-
+
+Component quantitiy field is missing
+%w/w field is missing
+Component packaging type is not binding with propoer data/table. The harmonized data will show for Year 2025-26 onword and old data for Year 2023-2024 and 2024-2025
+Component packaging material should show as per the component packaging type mapping
+Component Weight Unit of Measure is not binding with correct data/table
+%fields should be mandatory and all 4 % fields should not be more than100%
+Propoer DQ rules are notworking
+Saving of Add component is not working
+Edit component is not working propoerly
+Replace feature is not working propoerly"	
+14	Copy Data feature is not working	
+15	Export to excel is not properly exporting the data	
+16	"Generate PDF is not working
+
+Records are not propoerly binding in the filter dropdowns. Component packaging type and SKU should be multiselect
+Generated PDF is not in proper alignments
+Send for eSign is not working. I have not received email for eSign."	
+17	Send Approval flow will be tested together with CM login	
+18	Pls remove About and Contact from the top menu	
+19	Component wise Audit log is not binding	
+20	Detailed Audit log page is not binding. The Audit log should show only for 2025-26 period data onwords. Historic data would not have Audit log.	
+	Hide file upload feature for Admin in Add/Edit component	
