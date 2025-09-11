@@ -1,0 +1,439 @@
+{
+  "info": {
+    "name": "Component APIs Collection",
+    "description": "Collection for Component Management APIs including audit logs and file uploads",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Component Audit Log APIs",
+      "item": [
+        {
+          "name": "Get Component Audit Log",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/component-audit-log/{{componentId}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "component-audit-log", "{{componentId}}"]
+            },
+            "description": "Get audit log for a specific component ID"
+          }
+        },
+        {
+          "name": "Add Component Audit Log",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"component_id\": 123,\n  \"action_type\": \"UPDATE\",\n  \"action_reason\": \"Component details updated\",\n  \"old_values\": \"{\\\"component_code\\\": \\\"OLD_CODE\\\"}\",\n  \"new_values\": \"{\\\"component_code\\\": \\\"NEW_CODE\\\"}\",\n  \"changed_by\": \"user@example.com\",\n  \"change_summary\": \"Updated component code and description\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/add-component-audit-log",
+              "host": ["{{base_url}}"],
+              "path": ["api", "add-component-audit-log"]
+            },
+            "description": "Add new audit log entry for component changes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Component Detail APIs",
+      "item": [
+        {
+          "name": "Update Component Detail (with files)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "action",
+                  "value": "UPDATE",
+                  "type": "text"
+                },
+                {
+                  "key": "componentCode",
+                  "value": "COMP001",
+                  "type": "text"
+                },
+                {
+                  "key": "componentDescription",
+                  "value": "Updated component description",
+                  "type": "text"
+                },
+                {
+                  "key": "packagingEvidence",
+                  "type": "file",
+                  "src": [],
+                  "description": "Upload packaging evidence file"
+                },
+                {
+                  "key": "evidenceChemicalRecycled",
+                  "type": "file",
+                  "src": [],
+                  "description": "Upload chemical recycled evidence file"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/update-component-detail/{{mapping_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "update-component-detail", "{{mapping_id}}"]
+            },
+            "description": "Update component details with file uploads. Supports multipart/form-data with boundary for EIP platform compatibility."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Master Data APIs",
+      "item": [
+        {
+          "name": "Get Master Data",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{sso_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/get-masterdata",
+              "host": ["{{base_url}}"],
+              "path": ["api", "get-masterdata"]
+            },
+            "description": "Get all master data including periods, regions, material types, component codes, and packaging types"
+          }
+        }
+      ]
+    },
+    {
+      "name": "CM Codes APIs",
+      "item": [
+        {
+          "name": "Get All CM Codes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/cm-codes",
+              "host": ["{{base_url}}"],
+              "path": ["api", "cm-codes"]
+            },
+            "description": "Get all CM codes with user details including SRM, SPOC, and additional user information"
+          }
+        },
+        {
+          "name": "Get CM Code by Code",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/cm-codes/{{cm_code}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "cm-codes", "{{cm_code}}"]
+            },
+            "description": "Get specific CM code details with user information"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PDF APIs",
+      "item": [
+        {
+          "name": "PDF Access Token (File Upload)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "File",
+                  "type": "file",
+                  "src": [],
+                  "description": "Upload PDF file for Adobe Sign processing"
+                },
+                {
+                  "key": "email",
+                  "value": "test@example.com",
+                  "type": "text",
+                  "description": "Signer email address"
+                },
+                {
+                  "key": "cm_code",
+                  "value": "CM001",
+                  "type": "text",
+                  "description": "Contract Manager code"
+                },
+                {
+                  "key": "period",
+                  "value": "2024",
+                  "type": "text",
+                  "description": "Period/Year"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/pdf-accesstoken",
+              "host": ["{{base_url}}"],
+              "path": ["api", "pdf-accesstoken"]
+            },
+            "description": "Upload PDF file and create Adobe Sign agreement. Uses three Adobe APIs: OAuth, Transient Documents, and Agreements."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard APIs",
+      "item": [
+        {
+          "name": "CM Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{sso_token}}"
+              },
+              {
+                "key": "x-apikey",
+                "value": "bGMxYSqsNUb6F88L9rTY3OOMCynzZKAF"
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8000"
+              },
+              {
+                "key": "requestid",
+                "value": "{{$guid}}"
+              },
+              {
+                "key": "timestamp",
+                "value": "{{$timestamp}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/cm-dashboard/{{cmCode}}?include=skus,descriptions,references,audit_logs,component_data,master_data&period={{selectedYear}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "cm-dashboard", "{{cmCode}}"],
+              "query": [
+                {
+                  "key": "include",
+                  "value": "skus,descriptions,references,audit_logs,component_data,master_data"
+                },
+                {
+                  "key": "period",
+                  "value": "{{selectedYear}}"
+                }
+              ]
+            },
+            "description": "Get consolidated dashboard data for CM code with all related information"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "description": "Base URL for the API server"
+    },
+    {
+      "key": "access_token",
+      "value": "your_bearer_token_here",
+      "description": "Bearer token for authentication"
+    },
+    {
+      "key": "sso_token",
+      "value": "your_sso_token_here",
+      "description": "SSO token for authentication"
+    },
+    {
+      "key": "componentId",
+      "value": "123",
+      "description": "Component ID for audit log queries"
+    },
+    {
+      "key": "mapping_id",
+      "value": "456",
+      "description": "Mapping ID for component detail updates"
+    },
+    {
+      "key": "cm_code",
+      "value": "CM001",
+      "description": "CM Code for queries"
+    },
+    {
+      "key": "selectedYear",
+      "value": "2024",
+      "description": "Selected year for dashboard queries"
+    }
+  ]
+}
