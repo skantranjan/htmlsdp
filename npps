@@ -1,0 +1,7 @@
+# Adobe eSign Configuration
+ADOBE-CLIENT-ID=ats-59a0706a-60f7-42be-9fc1-cf5aacf5c5cb
+ADOBE-CLIENT-SECRET=eXXjSc_qZHdMkNcCBBzHGW2DLR1m4a1O
+ADOBE-REFRESH-TOKEN=3AAABLblqZhBWpF_JvVhjM2acltikyJGMalPlgQm2RgFY9wR3KeI91jCBNaQgC5V19B7D1cUjqK0*
+ADOBE-REFRESH-URL=https://api.eu1.adobesign.com/oauth/v2/refresh
+ADOBE-TRANSIENT-DOCS-URL=https://api.eu1.adobesign.com/api/rest/v6/transientDocuments
+ADOBE-AGREEMENTS-URL=https://api.eu1.adobesign.com/api/rest/v6/agreements
